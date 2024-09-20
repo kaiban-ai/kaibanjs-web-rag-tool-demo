@@ -16,8 +16,8 @@ This project implements a **Retrieval Augmented Generation** (RAG) system using 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-project.git
-   cd your-project
+   git clone https://github.com/kaiban-ai/kaibanjs-web-rag-tool-demo.git
+   cd kaibanjs-web-rag-tool-demo
    ```
 
 2. **Install dependencies:**
