@@ -1,0 +1,58 @@
+/* Base font size for rem units */
+html {
+  font-size: 16px;
+  /* 1rem = 16px */
+}
+
+/* General body styles */
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: calc(100vh - 2.5rem);
+  color: #0f172a;
+  background-image:
+    linear-gradient(to bottom, #faf5ff, #ecfeff),
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-blend-mode: multiply;
+}
+
+/* Input styling */
+input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  color: #0f172a;
+  border: 2px solid #e2e8f0;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #c7d2fe;
+}
+
+/* Button styling */
+button {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: .4rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+button:hover {
+  background-color: #4f46e5;
+}
+
+button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
