@@ -88,15 +88,6 @@ button:disabled {
     font-weight: 500;
 }
 
-.url {
-    color: #7dd3fc;
-    font-size: 0.875rem;
-}
-
-.url:hover {
-    color: #38bdf8;
-}
-
 .title {
     font-size: 1rem;
     font-weight: 600;
@@ -134,14 +125,14 @@ button:disabled {
     margin-bottom: 1rem;
 }
 
-.report {
+.result {
     background-color: #f8fafc;
     padding: 1rem;
     border-radius: .5rem;
     height: calc(100% - 100px);
 }
 
-.report-info {
+.result-info {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -152,18 +143,20 @@ button:disabled {
     margin: 0;
 }
 
-.report-info span:nth-child(1) {
+.result-info span:nth-child(1) {
     font-size: 1.25rem;
 }
 
-.report-info span:nth-child(2) {
+.result-info span:nth-child(2) {
     font-weight: 600;
     font-size: 1.15rem;
 }
 
-.report-info span:nth-child(3) {
+.result-info span:nth-child(3) {
     font-size: 0.875rem;
     font-weight: 300;
+    max-width: 420px;
+    text-align: center;
 }
 
 .stats {

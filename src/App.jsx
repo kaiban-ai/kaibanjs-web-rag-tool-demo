@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import DevUtils from './DevUtils';
-import { financeTeam } from './team';
+import { reactDevTeam } from './team';
 import ReactMarkdown from 'react-markdown';
 
 function App() {
   // Setting up State
   const [topic, setTopic] = useState('');
-  const [report, setReport] = useState('');
+  const [result, setResult] = useState('');
   const [stats, setStats] = useState(null);
 
   // Connecting to the KaibanJS Store
-  const useTeamStore = financeTeam.useStore();
+  const useTeamStore = reactDevTeam.useStore();
 
   const {
     agents,
@@ -23,14 +23,14 @@ function App() {
     teamWorkflowStatus: state.teamWorkflowStatus
   }));
 
-  const generateReport = async () => {
-    setReport('');
+  const generateResult = async () => {
+    setResult('');
     setStats(null);
 
     try {
-      const output = await financeTeam.start({ topic });
+      const output = await reactDevTeam.start({ topic });
       if (output.status === 'FINISHED') {
-        setReport(output.result);
+        setResult(output.result);
 
         const { costDetails, llmUsageStats, duration } = output.stats;
         setStats({
@@ -49,7 +49,6 @@ function App() {
   return (
     <div className="container">
       <h1 className="header">Website RAG Tool</h1>
-      <a className="url" href="https://www.cnbc.com/finance/" target="_blank">https://www.cnbc.com/finance/</a>
       <div className="status">Status <span>{teamWorkflowStatus}</span></div>
       <div className="grid">
         <div className="column">
@@ -58,19 +57,19 @@ function App() {
               type="text"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
-              placeholder="Enter a topic... E.g. 'Technology Stocks'"
+              placeholder="Enter a React topic or question, e.g. 'What is React?'"
             />
-            <button onClick={generateReport} disabled={topic === "" || teamWorkflowStatus === "RUNNING"}>
+            <button onClick={generateResult} disabled={topic === "" || teamWorkflowStatus === "RUNNING"}>
               Generate
             </button>
           </div>
 
-          {/* Report */}
-          <div className="report">
-            {report ? (
-              <ReactMarkdown>{report}</ReactMarkdown>
+          {/* Result */}
+          <div className="result">
+            {result ? (
+              <ReactMarkdown>{result}</ReactMarkdown>
             ) : (
-              <p className="report-info"><span>ℹ️</span><span>No report created yet</span><span>Enter a topic and click 'Generate' to see results here.</span></p>
+              <p className="result-info"><span>ℹ️</span><span>No results created yet</span><span>Please enter a React-related topic or question in the input box above and click 'Generate' to see the results here</span></p>
             )}
           </div>
         </div>
